@@ -33,7 +33,8 @@ Rectangle {
     property bool privateMode: false
     property bool moving: launcherListView.moving || launcherListView.flicking
     property bool preventHiding: moving || dndArea.draggedIndex >= 0 || quickList.state === "open" || dndArea.pressed
-                                 || dndArea.containsMouse || dashItem.hovered
+                                 || dndArea.containsMouse || dashItem.hovered || launcher.state === "drawer"
+                                 || launcher.state == "visible" || launcher.state == "visibleTemporary"
     property int highlightIndex: -2
     property bool shortcutHintsShown: false
     readonly property bool quickListOpen: quickList.state === "open"
